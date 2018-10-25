@@ -323,8 +323,7 @@ div.section {
 <strong>workflowr checks:</strong> <small>(Click a bullet for more information)</small>
 <ul>
 <li>
-<p><details> <summary> <strong style="color:blue;">✔</strong> <strong>R Markdown file:</strong> up-to-date </summary></p>
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p><details> <summary> <strong style="color:red;">✖</strong> <strong>R Markdown file:</strong> uncommitted changes </summary> The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </details>
 </li>
 <li>
@@ -343,11 +342,16 @@ div.section {
 </details>
 </li>
 <li>
-<p><details> <summary> <strong style="color:blue;">✔</strong> <strong>Repository version:</strong> <a href="https://github.com/surbut/Kidneyproject/tree/860fcbde8cec21d16bddfaeca6fe196b26e6e462" target="_blank">860fcbd</a> </summary></p>
+<p><details> <summary> <strong style="color:blue;">✔</strong> <strong>Repository version:</strong> <a href="https://github.com/surbut/Kidneyproject/tree/0e4ac76db3ec3bd2addcf056ebbf1d6928b9c592" target="_blank">0e4ac76</a> </summary></p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 <pre><code>
 Ignored files:
+    Ignored:    .DS_Store
     Ignored:    analysis/FiguresforDrChapman_cache/
+    Ignored:    docs/figure/
+
+Unstaged changes:
+    Modified:   analysis/FiguresforDrChapman.Rmd
 
 </code></pre>
 Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes. </details>
@@ -376,6 +380,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+html
+</td>
+<td style="text-align:left;">
+<a href="https://cdn.rawgit.com/surbut/Kidneyproject/0e4ac76db3ec3bd2addcf056ebbf1d6928b9c592/docs/FiguresforDrChapman.html" target="_blank">0e4ac76</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+<td style="text-align:left;">
+Build site.
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 Rmd
@@ -421,25 +442,174 @@ First Commit
 <p>The goal here is to estimate genetic ffects across tissues on gene expression for eQTL of genes known to be involved in kidney pathogenesis.</p>
 <p>You can find the <em>ENSG</em> name for each gene in the <code>genes=which(rownames)==ensg</code> command.</p>
 <p><img src="figure/FiguresforDrChapman.Rmd/exampleuk3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of exampleuk3-1.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/exampleuk3-1.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <p>Here we plot PKD2:</p>
 <pre class="r"><code>PKD2=which(rownames(z.stat)==&quot;ENSG00000118762.3_4_88908136_C_A_b37&quot;)
 newfunc.2(PKD2)</code></pre>
-<p><img src="figure/FiguresforDrChapman.Rmd/cars-1.png" width="672" style="display: block; margin: auto;" /><img src="figure/FiguresforDrChapman.Rmd/cars-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/FiguresforDrChapman.Rmd/cars-1.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of cars-1.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/cars-1.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details> <img src="figure/FiguresforDrChapman.Rmd/cars-2.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of cars-2.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/cars-2.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <p>Here we plot PKD1:</p>
 <pre class="r"><code>PKD1=which(rownames(z.stat)==&quot;ENSG00000008710.13_16_2195198_T_C_b37&quot;)
 
 newfunc.2(PKD1)</code></pre>
-<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-2-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-2-1.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-2-1.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details> <img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-2-2.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-2-2.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-2-2.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <pre class="r"><code>source(&quot;https://bioconductor.org/biocLite.R&quot;)</code></pre>
 <pre><code>Bioconductor version 3.7 (BiocInstaller 1.30.0), ?biocLite for help</code></pre>
 <pre class="r"><code>biocLite(&quot;biomaRt&quot;)</code></pre>
 <pre><code>BioC_mirror: https://bioconductor.org</code></pre>
 <pre><code>Using Bioconductor 3.7 (BiocInstaller 1.30.0), R 3.5.1 (2018-07-02).</code></pre>
 <pre><code>Installing package(s) &#39;biomaRt&#39;</code></pre>
-<pre><code>also installing the dependencies &#39;bit&#39;, &#39;bit64&#39;, &#39;blob&#39;, &#39;IRanges&#39;, &#39;DBI&#39;, &#39;RSQLite&#39;, &#39;S4Vectors&#39;, &#39;hms&#39;, &#39;prettyunits&#39;, &#39;XML&#39;, &#39;AnnotationDbi&#39;, &#39;progress&#39;</code></pre>
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/0f/35rhq2s94kvbgcf8_m__116w0000gn/T//RtmpcEzXmG/downloaded_packages</code></pre>
+    /var/folders/0f/35rhq2s94kvbgcf8_m__116w0000gn/T//RtmpjQUPKd/downloaded_packages</code></pre>
 <pre><code>Old packages: &#39;ape&#39;, &#39;cli&#39;, &#39;devtools&#39;, &#39;digest&#39;, &#39;dplyr&#39;, &#39;evaluate&#39;,
   &#39;fansi&#39;, &#39;MASS&#39;, &#39;mime&#39;, &#39;ps&#39;, &#39;Rcpp&#39;, &#39;rlang&#39;, &#39;tinytex&#39;, &#39;xfun&#39;</code></pre>
 <p>No data for these guys:</p>
@@ -462,25 +632,445 @@ ENSG00000165699 </code></pre>
 <pre class="r"><code>TSC2=which(rownames(z.stat)==&quot;ENSG00000103197.12_16_2138218_A_C_b37&quot;)
 
 newfunc.2(TSC2)</code></pre>
-<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-1.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-1.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details> <img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-2.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-2.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-2.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <pre class="r"><code>VHL=which(rownames(z.stat)==&quot;ENSG00000134086.7_3_10177653_C_T_b37&quot;)
 newfunc.2(VHL)</code></pre>
-<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-3.png" width="672" style="display: block; margin: auto;" /><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-3.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-3.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-3.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details> <img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-4.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-4.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-4.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <pre class="r"><code>GANAB=which(rownames(z.stat)==&quot;ENSG00000089597.12_11_62413662_C_T_b37&quot;)
 newfunc.2(GANAB)</code></pre>
-<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-5.png" width="672" style="display: block; margin: auto;" /><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-5.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-5.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-5.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details> <img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-6.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-6.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-6.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <pre class="r"><code>BBS1=which(rownames(z.stat)==&quot;ENSG00000174483.15_11_65435127_T_C_b37&quot;)
 newfunc.2(BBS1)</code></pre>
-<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-7.png" width="672" style="display: block; margin: auto;" /><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-7.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-7.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-7.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details> <img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-8.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-8.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-8.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <pre class="r"><code>BBS2=which(rownames(z.stat)==&quot;ENSG00000125124.7_16_56506126_C_A_b37&quot;)
 newfunc.2(BBS2)</code></pre>
-<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-9.png" width="672" style="display: block; margin: auto;" /><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-10.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-9.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-9.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-9.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details> <img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-10.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-10.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-10.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <pre class="r"><code>BBS7=which(rownames(z.stat)==&quot;ENSG00000138686.5_4_122746285_TC_T_b37&quot;)
 newfunc.2(BBS7)</code></pre>
-<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-11.png" width="672" style="display: block; margin: auto;" /><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-12.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-11.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-11.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-11.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details> <img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-12.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-12.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-12.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <pre class="r"><code>BBS12=which(rownames(z.stat)==&quot;ENSG00000181004.5_4_124533552_T_C_b37&quot;)
 newfunc.2(BBS12)</code></pre>
-<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-13.png" width="672" style="display: block; margin: auto;" /><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-14.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-13.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-13.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-13.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details> <img src="figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-14.png" width="672" style="display: block; margin: auto;" /></p>
+<details> <summary><em>Expand here to see past versions of unnamed-chunk-4-14.png:</em></summary>
+<table style="border-collapse:separate; border-spacing:5px;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Author
+</th>
+<th style="text-align:left;">
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/surbut/Kidneyproject/blob/860fcbde8cec21d16bddfaeca6fe196b26e6e462/docs/figure/FiguresforDrChapman.Rmd/unnamed-chunk-4-14.png" target="_blank">860fcbd</a>
+</td>
+<td style="text-align:left;">
+Sarah Urbut
+</td>
+<td style="text-align:left;">
+2018-10-24
+</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 </div>
 <div id="session-information" class="section level2">
 <h2>Session information</h2>
@@ -503,13 +1093,13 @@ other attached packages:
 [1] BiocInstaller_1.30.0 rmeta_3.0            knitr_1.20          
 
 loaded via a namespace (and not attached):
- [1] workflowr_1.1.1   Rcpp_0.12.18      codetools_0.2-15 
- [4] digest_0.6.17     rprojroot_1.3-2   R.methodsS3_1.7.1
- [7] grid_3.5.1        backports_1.1.2   git2r_0.23.0     
-[10] magrittr_1.5      evaluate_0.11     stringi_1.2.4    
-[13] whisker_0.3-2     R.oo_1.22.0       R.utils_2.7.0    
-[16] rmarkdown_1.10    tools_3.5.1       stringr_1.3.1    
-[19] yaml_2.2.0        compiler_3.5.1    htmltools_0.3.6  </code></pre>
+ [1] workflowr_1.1.1   Rcpp_0.12.18      digest_0.6.17    
+ [4] rprojroot_1.3-2   R.methodsS3_1.7.1 grid_3.5.1       
+ [7] backports_1.1.2   git2r_0.23.0      magrittr_1.5     
+[10] evaluate_0.11     stringi_1.2.4     whisker_0.3-2    
+[13] R.oo_1.22.0       R.utils_2.7.0     rmarkdown_1.10   
+[16] tools_3.5.1       stringr_1.3.1     yaml_2.2.0       
+[19] compiler_3.5.1    htmltools_0.3.6  </code></pre>
 </div>
 
 <!-- Adjust MathJax settings so that all math formulae are shown using

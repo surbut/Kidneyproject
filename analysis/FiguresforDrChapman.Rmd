@@ -13,9 +13,6 @@ The goal here is to estimate genetic ffects across tissues on gene expression fo
 library('knitr')
 
 library('rmeta')
-
-knitr::opts_chunk$set(cache=TRUE)
-#,fig.path = "/Users/sarahurbut/Dropbox/PaperEdits/Paper/Figureswithres/") 
 ```
 
 You can find the *ENSG* name for each gene in the ```genes=which(rownames)==ensg``` command.
