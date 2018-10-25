@@ -1,0 +1,157 @@
+---
+title: "Plots for Dr. Chapman"
+output: pdf_document
+---
+
+### Goal
+
+In this document, I will plot the original fitted univariate effects across tissues, and the estimated 'shrunken effects' using the method `mashr` from (Urbut et al, 2018)[https://www.biorxiv.org/content/early/2016/12/24/096552].
+
+The goal here is to estimate genetic ffects across tissues on gene expression for eQTL of genes known to be involved in kidney pathogenesis.
+
+```{r,include=FALSE}
+library('knitr')
+
+library('rmeta')
+
+knitr::opts_chunk$set(cache=TRUE)
+#,fig.path = "/Users/sarahurbut/Dropbox/PaperEdits/Paper/Figureswithres/") 
+```
+
+You can find the *ENSG* name for each gene in the ```genes=which(rownames)==ensg``` command.
+
+```{r exampleuk3,echo=F}
+
+
+source("~/Dropbox/gtexresults_matrixashold/Scripts/normfuncs.R")
+
+z.stat=read.table("~/Dropbox/gtexresults_matrixashold/Data/maxz.txt")
+b.stat=read.table("~/Dropbox/gtexresults_matrixashold/Data/maxbetahats.txt")
+
+standard.error=b.stat/z.stat
+
+
+
+
+
+covmat=readRDS("~/Dropbox/gtexresults_matrixashold/Data_vhat/covmatwithvhat.rds")
+posterior.means=read.table("~/Dropbox/gtexresults_matrixashold/Data_vhat/withvhatposterior.means.txt")[,-1]
+lfsr=read.table("~/Dropbox/gtexresults_matrixashold/Data_vhat/withvhatlfsr.txt")[,-1]
+mar.var=read.table("~/Dropbox/gtexresults_matrixashold/Data_vhat/withvhatmarginal.var.txt")[,-1]
+colnames(lfsr)=colnames(mar.var)=colnames(posterior.means)=colnames(z.stat)
+
+posterior.betas=standard.error*posterior.means
+pm.beta.norm=het.norm(posterior.betas)
+
+
+missing.tissues=c(7,8,19,20,24,25,31,34,37)
+color.gtex=read.table("~/Dropbox/gtexresults_matrixashold/Data/GTExColors.txt",sep = '\t', comment.char = '')[-missing.tissues,]
+
+uk3labels=read.table("~/Dropbox/gtexresults_matrixashold/Data/uk3rowindices.txt")[,1]
+
+col = as.character(color.gtex[uk3labels,2])
+
+
+barplot(seq(1:44),col=col,names=colnames(lfsr[,uk3labels]),las=2,main="Legend",cex.names=0.5)
+
+
+missing.tissues=c(7,8,19,20,24,25,31,34,37)
+uk3labels=read.table("~/Dropbox/gtexresults_matrixashold/Data/uk3rowindices.txt")[,1]
+
+newfunc.2=function(j){
+gtex.colors=read.table('~/Dropbox/gtexresults_matrixashold/Data/GTExColors.txt', sep = '\t', comment.char = '')[-missing.tissues,2]
+gtex.colors=gtex.colors[uk3labels]
+
+
+
+
+pm.beta.norm=pm.beta.norm[,uk3labels]##shufflecolumns
+z.shuffle=z.stat[,uk3labels]
+b.shuffle=b.stat[,uk3labels]
+post.var=mar.var[uk3labels]
+post.bshuffle=posterior.betas[,uk3labels]
+sem.shuffle=standard.error[,uk3labels]
+lfsr=lfsr[,uk3labels]
+title=strsplit(rownames(z.stat)[j], "[.]")[[1]][1]
+
+
+
+
+x=as.numeric(post.bshuffle[j,])
+
+par(mfrow=c(1,1))
+metaplot(as.numeric(b.shuffle[j,]),as.numeric(sem.shuffle[j,]),xlab = "",ylab="",colors=meta.colors(box=as.character(gtex.colors)),xlim=c(-1,1))
+title(title)
+
+par(mfrow=c(1,1))
+sd=as.numeric(sem.shuffle[j,])*sqrt(as.numeric(post.var[j,]))##to transform to posterior sd of beta
+metaplot(x,sd,xlab = "",ylab="",colors=meta.colors(box=as.character(gtex.colors)),xlim=c(-1,1))
+title(title)
+}
+````
+
+Here we plot PKD2:
+```{r cars}
+
+PKD2=which(rownames(z.stat)=="ENSG00000118762.3_4_88908136_C_A_b37")
+newfunc.2(PKD2)
+```
+
+Here we plot PKD1:
+```{r}
+PKD1=which(rownames(z.stat)=="ENSG00000008710.13_16_2195198_T_C_b37")
+
+newfunc.2(PKD1)
+
+source("https://bioconductor.org/biocLite.R")
+biocLite("biomaRt")
+```
+
+No data for these guys:
+```{r,eval=F}
+PKD1L1
+ENSG00000158683
+
+PKD1L2
+ENSG00000166473 
+
+PKD2L1
+ENSG00000107593
+
+
+PKD2L2
+ENSG00000078795
+
+
+TSC1
+ENSG00000165699 
+```
+
+```{r}
+TSC2=which(rownames(z.stat)=="ENSG00000103197.12_16_2138218_A_C_b37")
+
+newfunc.2(TSC2)
+
+VHL=which(rownames(z.stat)=="ENSG00000134086.7_3_10177653_C_T_b37")
+newfunc.2(VHL)
+
+GANAB=which(rownames(z.stat)=="ENSG00000089597.12_11_62413662_C_T_b37")
+newfunc.2(GANAB)
+
+
+
+BBS1=which(rownames(z.stat)=="ENSG00000174483.15_11_65435127_T_C_b37")
+newfunc.2(BBS1)
+
+BBS2=which(rownames(z.stat)=="ENSG00000125124.7_16_56506126_C_A_b37")
+newfunc.2(BBS2)
+
+BBS7=which(rownames(z.stat)=="ENSG00000138686.5_4_122746285_TC_T_b37")
+newfunc.2(BBS7)
+
+
+BBS12=which(rownames(z.stat)=="ENSG00000181004.5_4_124533552_T_C_b37")
+newfunc.2(BBS12)
+```
+
+
